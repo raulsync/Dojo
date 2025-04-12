@@ -1,14 +1,17 @@
-import {createStaticNavigation, useNavigation} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  // createStaticNavigation,
+  useNavigation,
+} from '@react-navigation/native';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   // Alert,
   //  Button,
   // Image,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
-import {Button} from '@react-navigation/elements';
 import Detail from './Detail';
 
 // const profile_img =
@@ -16,12 +19,17 @@ import Detail from './Detail';
 
 // const box_img =
 //   'https://m.media-amazon.com/images/I/61qbMx4oXJL._AC_UF1000,1000_QL80_.jpg';
+
 function HomeScreen() {
   const {navigate} = useNavigation();
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <Button onPress={() => navigate('Detail')}>Go to Details</Button>
+      <Text style={{textAlign: 'center'}}>Home Screen</Text>
+      <TouchableOpacity
+        onPress={() => navigate('Detail', {username: 'Rahul'})}
+        style={styles.button}>
+        <Text style={styles.text}>Go to detail</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -51,8 +59,19 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
+  },
+  button: {
+    backgroundColor: 'red',
+    borderRadius: 5,
+    padding: 5,
+    margin: 10,
+  },
+  text: {
+    color: 'white',
+    paddingHorizontal: 10,
+    textAlign: 'center',
   },
 });
 
