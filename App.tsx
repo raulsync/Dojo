@@ -9,13 +9,14 @@ import React from 'react';
 // import {ScrollView, StatusBar} from 'react-native';
 // import HomeScreen from './screens/HomeScreen';
 // import LayoutScreen from './screens/LayoutScreen';
-import HomeScreen from './src/screens/HomeScreen';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// import HomeScreen from './src/screens/HomeScreen';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
-import Detail from './src/screens/Detail';
-import DrawerNavigator from './src/navigation/drawer/DrawerNavigator';
+// import Detail from './src/screens/Detail';
+// import DrawerNavigator from './src/navigation/drawer/DrawerNavigator';
+import TabNavigator from './src/navigation/tabs/TabNavigator';
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 
 //we can create dynamic navigatiin by this
 // function RootStack() {
@@ -38,7 +39,8 @@ const Stack = createNativeStackNavigator();
 function App(): React.JSX.Element {
   return (
     <NavigationContainer>
-      <DrawerNavigator />
+      {/* <DrawerNavigator /> */}
+      <TabNavigator />
     </NavigationContainer>
   );
 }
